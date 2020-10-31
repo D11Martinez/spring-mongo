@@ -18,8 +18,8 @@ public class MongoConfig {
 		return new CommandLineRunner() {
 			@Override
 			public void run(String...strings) throws Exception{
-				userRepository.save(new User(1,"Peter", "Development", 3000L));
-				userRepository.save(new User(2,"Sam", "Operations", 2000L));
+				userRepository.save(new User(1L,"Peter", "Development", 3000L));
+				userRepository.save(new User(2L,"Sam", "Operations", 2000L));
 			}
 		};
 	}

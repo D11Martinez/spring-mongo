@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+	<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+	
+	<!-- Llamada a archivo de header -->
+	<head th:replace="shared/head :: header"></head>
+
+	<body>
+		<!-- Menu del sistema  -->
+		<div th:replace="shared/menu :: nav"></div>
+		
+		<div class = "container">
+		
+			<!-- Page-body start -->
+			<div class="row justify-content-around">
+				
+				<div class = "col-12 mt-5">
+					
+					<div class="card">
+					<!-- Titulo del contenido -->
+					  <div class="card-header justify-content-between">
+					    <div layout:fragment="title_content"></div>
+					  </div>
+					  <!-- Cuerpo del contenido -->
+					  <div class="card-body">
+						<div layout:fragment="page_content"></div>			    
+					  </div>
+					  
+					  <!-- Footer del contenido -->
+					  <div class = "card-footer">
+					  	<div layout:fragment="footer_content"></div>	
+					  </div>
+					  
+					</div>
+					
+				</div>
+				
+			</div>
+		</div>
+		
+	<!--  footer start -->
+	<div th:replace="shared/footer :: footer"></div>
+	<!--  footer-end -->
+
+	<!-- scripts-start -->
+	<script th:replace="shared/script :: scripts"></script>
+	<!-- scripts-end -->
+		
+	</body>
+</html>

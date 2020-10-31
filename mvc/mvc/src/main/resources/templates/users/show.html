@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{shared/Layout}">
+	
+	<body>
+	
+		<div class="pcoded-inner-content"  layout:fragment="title_content">
+		
+									<h5>Detalles de usuario</h5>
+									
+									<a th:href = "@{/users}" class = "btn btn-info">Lista de usuarios</a>
+		
+		</div>
+		
+		<div class="pcoded-inner-content"  layout:fragment="page_content">
+		
+	                                <form class="form-group" th:object="${usuario}" method="post" >
+	                                
+	                                   <div class="form-inline">
+	                                      <label class="mr-2">Id:</label>
+	                                      <output th:text = "${usuario.id}"></output>
+	                                   </div>	                                
+
+	                                   <div class="form-inline">
+	                                      <label class="mr-2">Name:</label>
+	                                      <output th:text = "${usuario.name}"></output>
+	                                   </div>	     
+
+	                                   <div class="form-inline">
+	                                      <label class="mr-2">Team Name:</label>
+	                                      <output th:text = "${usuario.teamName}"></output>
+	                                   </div>	     
+	                                
+	                                   <div class="form-inline">
+	                                      <label class="mr-2">Salary:</label>
+	                                      <output th:text = "${'$' + usuario.salary}"></output>
+	                                   </div>	     	                                
+	                                
+	                                 </form>
+		
+		</div>
+		
+		<div class="pcoded-inner-content"  layout:fragment="footer_content">
+		
+			<p>Se usa Spring Boot y Mongo DB</p>
+		
+		</div>		
+		
+		
+	</body>
+	
+</html>
+
+
+
+
+
+
+
+<!-- 
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+		<!-- Latest compiled and minified CSS 
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	</head>
+
+	<body>
+		
+		<div class= "container">
+			
+			<div class ="row justify-content-between">
+				
+				<div class = "col-md-6">
+				
+							<div class="card">
+								<div class="card-header">
+									<h5>Detalles de usuario</h5>
+									
+									<a th:href = "@{/users}" class = "btn btn-info">Lista de usuarios</a>
+								</div>
+								
+								<div class="card-block">
+								
+	                                <form class="form-group" th:object="${usuario}" method="post" >
+	                                
+	                                   <div class="form-inline">
+	                                      <label class="">Id:</label>
+	                                      <p th:text = "${usuario.id}"></p>
+	                                   </div>	                                
+
+	                                   <div class="form-inline">
+	                                      <label class="">Name:</label>
+	                                      <p th:text = "${usuario.name}"></p>
+	                                   </div>	     
+
+	                                   <div class="form-inline">
+	                                      <label class="">Team Name:</label>
+	                                      <p th:text = "${usuario.teamName}"></p>
+	                                   </div>	     
+	                                
+	                                   <div class="form-inline">
+	                                      <label class="">Salary:</label>
+	                                      <p th:text = "${usuario.salary}"></p>
+	                                   </div>	     	                                
+	                                
+	                                 </form>
+                                   
+								</div>
+							</div>
+					
+				
+				</div>
+				
+			</div>
+			
+		</div>
+		
+	
+			<!-- Latest compiled JavaScript 
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	</body>
+</html>  -->

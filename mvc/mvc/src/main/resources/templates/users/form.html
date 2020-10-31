@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{shared/Layout}">
+	
+	<body>
+	
+		<div class="pcoded-inner-content"  layout:fragment="title_content">
+		
+			<h5>Registrar usuario</h5>
+		
+		</div>
+		
+		<div class="pcoded-inner-content"  layout:fragment="page_content">
+		
+	       <form class="form-material" th:action="@{/users/adduser}" th:object="${usuario}" method="post" >
+	                                
+	          <div class="form-group form-default">
+	            <input type="number" name="id" class="form-control" required th:field="*{id}" min="0" placeholder = "Id">
+	                                     
+	            <label class="float-label">Id:</label>
+	          </div>	                                
+	                                
+	          <div class="form-group form-default">
+	            <input type="text" name="name" class="form-control" required th:field="*{name}" maxlength="40" placeholder = "Nombre">
+	                                     
+	          	<label class="float-label">Nombre:</label>
+	          </div>
+	                                   
+	          <div class="form-group form-default">
+	            <input type="text" name="teamName" class="form-control" required th:field="*{teamName}" maxlength="40" placeholder = "Nombre  de equipo">
+	                                     
+	           	<label class="float-label">Nombre del equipo:</label>
+	           </div>
+	
+	          <div class="form-group form-default">
+	             <input type="number" name="salary" class="form-control" required th:field="*{salary}" min="0" step="0.01" placeholder = "Salario">
+	                                     
+	             <label class="float-label">Salario:</label>
+	          </div>
+								 
+			<button type ="submit" class ="btn btn-success">Guardar</button>
+								 
+	       </form>
+		
+		</div>
+		
+		<div class="pcoded-inner-content"  layout:fragment="footer_content">
+		
+			<p>Se usa Spring Boot y Mongo DB</p>
+		
+		</div>		
+		
+		
+	</body>
+	
+</html>
+
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+		<!-- Latest compiled and minified CSS 
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	</head>
+
+	<body>
+		
+		<div class= "container">
+			
+			<div class ="row justify-content-center">
+				
+				<div class = "col-md-6">
+				
+							<div class="card">
+								<div class="card-header">
+									<h5>Registrar usuario</h5>
+								</div>
+								
+								<div class="card-block">
+								
+	                                <form class="form-material" th:action="@{/users/adduser}" th:object="${usuario}" method="post" >
+	                                
+	                                   <div class="form-group form-default">
+	                                      <input type="number" name="id" class="form-control" required th:field="*{id}" 
+	                                      min="0" placeholder = "Id">
+	                                     
+	                                      <label class="float-label">Id:</label>
+	                                   </div>	                                
+	                                
+	                                   <div class="form-group form-default">
+	                                      <input type="text" name="name" class="form-control" required th:field="*{name}" 
+	                                      maxlength="40" placeholder = "Nombre">
+	                                     
+	                                      <label class="float-label">Nombre:</label>
+	                                   </div>
+	                                   
+	                                   <div class="form-group form-default">
+	                                      <input type="text" name="teamName" class="form-control" required th:field="*{teamName}" 
+	                                      maxlength="40" placeholder = "Nombre  de equipo">
+	                                     
+	                                      <label class="float-label">Nombre del equipo:</label>
+	                                   </div>
+	
+	                                   <div class="form-group form-default">
+	                                      <input type="number" name="salary" class="form-control" required th:field="*{salary}" 
+	                                      min="0" step="0.01" placeholder = "Salario">
+	                                     
+	                                      <label class="float-label">Salario:</label>
+	                                   </div>
+								 
+								 		<button type ="submit" class ="btn btn-success">Guardar</button>
+								 
+	                                 </form>
+                                   
+								</div>
+							</div>
+					
+				
+				</div>
+				
+			</div>
+			
+		</div>
+		
+	
+			<!-- Latest compiled JavaScript 
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	</body>
+</html> -->
