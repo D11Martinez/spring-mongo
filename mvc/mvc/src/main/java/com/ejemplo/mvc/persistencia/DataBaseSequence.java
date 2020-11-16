@@ -1,4 +1,4 @@
-package com.ejemplo.mvc.models;
+package com.ejemplo.mvc.persistencia;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;

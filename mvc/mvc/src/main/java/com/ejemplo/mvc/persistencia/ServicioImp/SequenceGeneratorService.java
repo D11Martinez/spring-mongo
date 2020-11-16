@@ -1,4 +1,4 @@
-package com.ejemplo.mvc.service;
+package com.ejemplo.mvc.persistencia.ServicioImp;
 
 import static org.springframework.data.mongodb.core.FindAndModifyOptions.options;
 import static org.springframework.data.mongodb.core.query.Criteria.where;
@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
-import com.ejemplo.mvc.models.DataBaseSequence;
+import com.ejemplo.mvc.persistencia.DataBaseSequence;
 
 @Service
 public class SequenceGeneratorService {

@@ -1,4 +1,4 @@
-package com.ejemplo.mvc.models;
+package com.ejemplo.mvc.negocio;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;

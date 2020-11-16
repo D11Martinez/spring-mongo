@@ -1,12 +1,12 @@
-package com.ejemplo.mvc.config;
+package com.ejemplo.mvc.aplicacion.config;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
-import com.ejemplo.mvc.models.User;
-import com.ejemplo.mvc.repository.UserRepository;
+import com.ejemplo.mvc.negocio.User;
+import com.ejemplo.mvc.persistencia.RepositorioMongo.UserRepository;
 
 @Configuration
 @EnableMongoRepositories(basePackageClasses = UserRepository.class)

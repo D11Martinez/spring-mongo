@@ -1,7 +1,5 @@
-package com.ejemplo.mvc.controller;
+package com.ejemplo.mvc.aplicacion.controlador;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,8 +7,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.ejemplo.mvc.models.User;
-import com.ejemplo.mvc.service.UserService;
+import com.ejemplo.mvc.negocio.User;
+import com.ejemplo.mvc.negocio.servicios.UserServiceImp;
+import com.ejemplo.mvc.persistencia.RepositorioImp.UserRepositoryImp;
 
 @Controller
 @RequestMapping("/users")
@@ -20,14 +19,16 @@ public class UserController {
 	private String showHtml = "users/show";
 	private String formHtml = "users/form";
 	
-    @Autowired
-    @Qualifier("userService")
-	private UserService userService;	
+	private UserServiceImp userServiceImp;
+	
+	public UserController(UserRepositoryImp userRepositoryImp) {
+		this.userServiceImp = new UserServiceImp(userRepositoryImp);
+	}		
 	
 	@GetMapping("")
 	public String listUser(Model model) {
 		
-		model.addAttribute("users", userService.getList());
+		model.addAttribute("users", userServiceImp.getList());
 		
 		return listHtml;
 	}
@@ -35,7 +36,7 @@ public class UserController {
 	@GetMapping("/showuser/{id}")
 	public String showUser(@PathVariable Long id, Model model) {
 		
-		User usuario = userService.getUser(id);
+		User usuario = userServiceImp.getUser(id);
 
 		model.addAttribute("usuario", usuario);
 		
@@ -55,7 +56,7 @@ public class UserController {
 	@PostMapping("/adduser")
 	public String saveUser(User usuario, Model model) {
 		//metodo para guardar el usuario
-		userService.saveUser(usuario);
+		userServiceImp.saveUser(usuario);
 
 		model.addAttribute("usuario", new User());
 		
